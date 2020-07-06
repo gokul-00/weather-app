@@ -9,6 +9,8 @@ window.addEventListener('load',()=> {
        navigator.geolocation.getCurrentPosition(position => {
            long = position.coords.longitude;
            lat = position.coords.latitude;
+           long = long.toFixed(2);
+           lat = lat.toFixed(2);
            const proxy = `https://cors-anywhere.herokuapp.com/`;
            const Id = `f8532618413cc9dcd03b5deb29838b73`;
            const api = `${proxy}https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${long}&appid=${Id}`;
